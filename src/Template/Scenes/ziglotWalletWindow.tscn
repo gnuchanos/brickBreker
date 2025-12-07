@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://yfqb62d76i5v"]
+
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="1_peig0"]
+[ext_resource type="Script" uid="uid://456jtvgx7x6g" path="res://Template/Scripts/ziglotWalletWindow.gd" id="2_i8vxy"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="3_i8vxy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eck1n"]
+bg_color = Color(0.6666667, 0, 1, 1)
+expand_margin_top = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3i6m"]
+bg_color = Color(0.31648767, 0.0006168437, 0.45319712, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nluw8"]
+bg_color = Color(0.2180857, 0.00039616422, 0.3441212, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8vxy"]
+bg_color = Color(0.17055926, 0.025283119, 0.2371656, 1)
+
+[node name="ziglotWalletWindow" type="Window"]
+oversampling_override = 1.0
+title = "Ziglot Wallet Terminal"
+position = Vector2i(0, 36)
+size = Vector2i(915, 335)
+theme = ExtResource("1_peig0")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_eck1n")
+script = ExtResource("2_i8vxy")
+
+[node name="bg" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3i6m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_nluw8")
+text = "Wallet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ziglot" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ziglot_STR" type="Label" parent="VBoxContainer/ziglot"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8vxy")
+text = "qweqweqweqwe"
+vertical_alignment = 1
+
+[node name="getZiglot_AD" type="Button" parent="VBoxContainer/ziglot"]
+layout_mode = 2
+theme = ExtResource("1_peig0")
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 23
+text = " Extra 1 Ziglot Ad Reword "
+
+[node name="ziglotGold" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ziglotGold_STR" type="Label" parent="VBoxContainer/ziglotGold"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8vxy")
+text = "qweqweqweqwe"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_nluw8")
+text = "Convert Ziglot or Zoglot Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ziglotConvert" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ziglot_Input" type="LineEdit" parent="VBoxContainer/ziglotConvert"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(16.635935, 16.635935, 16.635935, 1)
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8vxy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i8vxy")
+placeholder_text = " 20 Ziglot -> 1 Ziglot Gold :  This is input Box"
+caret_blink = true
+
+[node name="getZiglot_Convert" type="Button" parent="VBoxContainer/ziglotConvert"]
+layout_mode = 2
+theme = ExtResource("1_peig0")
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 23
+text = " Convert Ziglot to Ziglot Gold "
+
+[node name="ziglotGoldConvert" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ziglotGold_Input" type="LineEdit" parent="VBoxContainer/ziglotGoldConvert"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(16.635935, 16.635935, 16.635935, 1)
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8vxy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i8vxy")
+placeholder_text = " 1 Ziglot -> 20 Ziglot Gold :  This is input Box"
+caret_blink = true
+
+[node name="getZiglotGold_Convert" type="Button" parent="VBoxContainer/ziglotGoldConvert"]
+layout_mode = 2
+theme = ExtResource("1_peig0")
+theme_override_fonts/font = ExtResource("3_i8vxy")
+theme_override_font_sizes/font_size = 23
+text = " Convert Ziglot Gold to Ziglot"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="VBoxContainer/ziglot/getZiglot_AD" to="." method="_on_get_ziglot_ad_pressed"]
+[connection signal="pressed" from="VBoxContainer/ziglotConvert/getZiglot_Convert" to="." method="_on_get_ziglot_convert_pressed"]
+[connection signal="pressed" from="VBoxContainer/ziglotGoldConvert/getZiglotGold_Convert" to="." method="_on_get_ziglot_gold_convert_pressed"]

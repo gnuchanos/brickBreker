@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=3 uid="uid://btys28vuco0dh"]
+
+[ext_resource type="Script" uid="uid://cugey8r53tbqc" path="res://BaseGame/scripts/level.gd" id="1_5dt34"]
+[ext_resource type="Texture2D" uid="uid://ciutv8hbu0etj" path="res://BaseGame/assets/bg.png" id="2_3vsac"]
+[ext_resource type="PackedScene" uid="uid://b1jicjrct1yrv" path="res://BaseGame/scenes/paddle.tscn" id="2_5dt34"]
+[ext_resource type="PackedScene" uid="uid://be35w3b5do0sx" path="res://BaseGame/scenes/ball.tscn" id="3_3vsac"]
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="5_3vsac"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="6_psw3b"]
+[ext_resource type="Script" uid="uid://bp86s13c0c5q4" path="res://BaseGame/scripts/pause.gd" id="7_psw3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acdb5"]
+size = Vector2(1164, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq1xf"]
+size = Vector2(20, 739.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c1jt"]
+size = Vector2(20, 741)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfxgj"]
+size = Vector2(1139, 20)
+
+[node name="gameScene" type="Node2D"]
+script = ExtResource("1_5dt34")
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(1, 0.243137, 1, 0.164706)
+z_index = -2
+position = Vector2(803, 448.00003)
+scale = Vector2(1.00125, 1.0022223)
+texture = ExtResource("2_3vsac")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(231.00006, 125)
+
+[node name="Ceiling" type="CollisionShape2D" parent="Walls"]
+position = Vector2(573, -70)
+shape = SubResource("RectangleShape2D_acdb5")
+
+[node name="Right Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1160, 289.75)
+shape = SubResource("RectangleShape2D_eq1xf")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-15, 292.5)
+shape = SubResource("RectangleShape2D_1c1jt")
+
+[node name="Paddle" parent="." instance=ExtResource("2_5dt34")]
+position = Vector2(806.00006, 706)
+
+[node name="Ball" parent="." instance=ExtResource("3_3vsac")]
+position = Vector2(807.00006, 556)
+
+[node name="Deathzone" type="Area2D" parent="."]
+position = Vector2(231.00006, 125)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+position = Vector2(573.5, 663)
+shape = SubResource("RectangleShape2D_kfxgj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.044375
+offset_left = 239.0
+offset_top = 10.0
+offset_right = 389.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.043125037
+offset_left = 548.0
+offset_top = 10.0
+offset_right = 697.99994
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LifeLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.07000004
+offset_left = 838.0
+offset_top = 10.0
+offset_right = 987.99994
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MuteSound" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 98.0
+offset_right = 145.0
+offset_bottom = 125.0
+theme = ExtResource("5_3vsac")
+theme_override_fonts/font = ExtResource("6_psw3b")
+text = " Mute Sounds "
+
+[node name="PauseGame" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 129.0
+offset_right = 145.0
+offset_bottom = 156.0
+theme = ExtResource("5_3vsac")
+theme_override_fonts/font = ExtResource("6_psw3b")
+text = " Pause The Game "
+
+[node name="exit" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 160.0
+offset_right = 145.0
+offset_bottom = 187.0
+theme = ExtResource("5_3vsac")
+theme_override_fonts/font = ExtResource("6_psw3b")
+theme_override_font_sizes/font_size = 14
+text = " Go Back To Desktop "
+
+[node name="Pause" type="Window" parent="CanvasLayer"]
+oversampling_override = 1.0
+position = Vector2i(565, 280)
+size = Vector2i(480, 385)
+visible = false
+theme = ExtResource("5_3vsac")
+script = ExtResource("7_psw3b")
+
+[connection signal="body_entered" from="Deathzone" to="Ball" method="_on_deathzone_body_entered"]
+[connection signal="pressed" from="CanvasLayer/MuteSound" to="." method="_on_mute_sound_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseGame" to="." method="_on_pause_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_exit_pressed"]
+[connection signal="close_requested" from="CanvasLayer/Pause" to="CanvasLayer/Pause" method="_on_close_requested"]

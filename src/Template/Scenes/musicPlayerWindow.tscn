@@ -1,0 +1,239 @@
+[gd_scene load_steps=9 format=3 uid="uid://cks2opyr4phuc"]
+
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="1_3o5k0"]
+[ext_resource type="Script" uid="uid://cww0wm18bboh1" path="res://Template/Scripts/musicPlayerWindow.gd" id="2_3o5k0"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="3_bbxsg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eck1n"]
+bg_color = Color(0.6666667, 0, 1, 1)
+expand_margin_top = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwxqh"]
+bg_color = Color(0.31648767, 0.0006168437, 0.45319712, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42082"]
+bg_color = Color(0.123148836, 0.015523924, 0.19441786, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwkyr"]
+bg_color = Color(0.6233463, 0.29016557, 0.85099566, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbxsg"]
+bg_color = Color(0.6222288, 0.28982407, 0.85155, 1)
+
+[node name="musicPlayerWindow" type="Window"]
+oversampling_override = 1.0
+title = "Simple Music Player"
+position = Vector2i(0, 36)
+size = Vector2i(405, 675)
+theme = ExtResource("1_3o5k0")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_eck1n")
+script = ExtResource("2_3o5k0")
+
+[node name="bg" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwxqh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_42082")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="musicName" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_iwkyr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="before" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 20
+text = "<"
+
+[node name="play" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 20
+text = "Play"
+
+[node name="stop" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 20
+text = "Stop"
+
+[node name="after" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 20
+text = ">"
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bbxsg")
+
+[node name="music1" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 1"
+
+[node name="music2" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 2"
+
+[node name="music3" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 3"
+
+[node name="music4" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 4"
+
+[node name="music5" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 5"
+
+[node name="music6" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 6"
+
+[node name="music7" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 7"
+
+[node name="music8" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 8"
+
+[node name="music9" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 9"
+
+[node name="music10" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 10"
+
+[node name="music11" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 11"
+
+[node name="music12" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 12"
+
+[node name="music13" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3o5k0")
+theme_override_fonts/font = ExtResource("3_bbxsg")
+theme_override_font_sizes/font_size = 23
+text = "CyberWare Music 13"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer/before" to="." method="_on_before_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer/stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer/after" to="." method="_on_after_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music1" to="." method="_on_music_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music2" to="." method="_on_music_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music3" to="." method="_on_music_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music4" to="." method="_on_music_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music5" to="." method="_on_music_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music6" to="." method="_on_music_6_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music7" to="." method="_on_music_7_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music8" to="." method="_on_music_8_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music9" to="." method="_on_music_9_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music10" to="." method="_on_music_10_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music11" to="." method="_on_music_11_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music12" to="." method="_on_music_12_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/music13" to="." method="_on_music_13_pressed"]

@@ -1,0 +1,57 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://ccjndvnjdmjjc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqmd5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k7vd6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkjr4"]
+bg_color = Color(0.5217365, 0, 0.6233463, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnec2"]
+bg_color = Color(0.3136187, 0, 0.37663844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60pt5"]
+bg_color = Color(0.20761426, 0, 0.25108722, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_je3va"]
+color = Color(0.7490196, 0.2509804, 1, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_53u0w"]
+color = Color(0.56078434, 0.1882353, 0.7490196, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cirn4"]
+color = Color(0.3764706, 0.1254902, 0.5019608, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eck1n"]
+bg_color = Color(0.6666667, 0, 1, 1)
+expand_margin_top = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rde46"]
+bg_color = Color(0.2713151, 0.0006069288, 0.42191708, 1)
+expand_margin_top = 30.0
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_aqmd5")
+Button/styles/focus = SubResource("StyleBoxEmpty_k7vd6")
+Button/styles/hover = SubResource("StyleBoxFlat_jkjr4")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_fnec2")
+Button/styles/normal = SubResource("StyleBoxFlat_60pt5")
+Button/styles/pressed = SubResource("StyleBoxFlat_fnec2")
+HSlider/styles/grabber_area = SubResource("StyleBoxLine_je3va")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxLine_53u0w")
+HSlider/styles/slider = SubResource("StyleBoxLine_cirn4")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_eck1n")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_rde46")

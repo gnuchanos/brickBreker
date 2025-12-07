@@ -1,0 +1,314 @@
+[gd_scene load_steps=40 format=3 uid="uid://x1uki5dkkvbp"]
+
+[ext_resource type="Script" uid="uid://c88rk8532qomj" path="res://Template/Scripts/main.gd" id="1_fq1xu"]
+[ext_resource type="PackedScene" uid="uid://cprckv6vt2y2y" path="res://Template/Scenes/calculatorWindow.tscn" id="2_2ut1a"]
+[ext_resource type="Texture2D" uid="uid://dg2qkp44r4urh" path="res://Template/Images/screen.png" id="2_60pt5"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="2_k7vd6"]
+[ext_resource type="Script" uid="uid://cqp72hkew7pj2" path="res://Template/Scripts/3DScreen.gd" id="4_fy443"]
+[ext_resource type="PackedScene" uid="uid://bc1qbaiw5j5pt" path="res://Template/3D/Cardis/Cardis.glb" id="4_jkjr4"]
+[ext_resource type="PackedScene" uid="uid://bggumlgvxtx3m" path="res://Template/Scenes/OptionsWindow.tscn" id="4_v35cg"]
+[ext_resource type="PackedScene" uid="uid://btcxj08wtaajk" path="res://Template/3D/Cardis/portal_door.glb" id="5_6oc53"]
+[ext_resource type="PackedScene" uid="uid://btueqlmyldgla" path="res://Template/Scenes/creditWindow.tscn" id="5_60pt5"]
+[ext_resource type="PackedScene" uid="uid://c6rtdkdtvg8da" path="res://Template/3D/Cardis/3DMap.glb" id="5_aqmd5"]
+[ext_resource type="PackedScene" uid="uid://buxx3ehavuco4" path="res://Template/3D/ME/CubeChanPc.glb" id="5_n18ew"]
+[ext_resource type="PackedScene" uid="uid://du6kr13ygokwc" path="res://Template/3D/Cardis/centerObject.glb" id="5_u1jlj"]
+[ext_resource type="PackedScene" uid="uid://bklktju3qai4u" path="res://Template/3D/Cardis/energyDC.glb" id="11_ivhgg"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dbkcqaxd25oj8" path="res://Template/Scenes/MainScene.occ" id="11_jsfrx"]
+[ext_resource type="PackedScene" uid="uid://b5je1xgp08xso" path="res://Template/3D/Cardis/gameboy.glb" id="12_c7x4w"]
+[ext_resource type="PackedScene" uid="uid://blnrerscd5wq5" path="res://Template/3D/Cardis/gnuchanCUBE.glb" id="13_1ixem"]
+[ext_resource type="PackedScene" uid="uid://b8p161kxcra81" path="res://Template/3D/Cardis/fusionCheck.glb" id="13_qwtrw"]
+[ext_resource type="PackedScene" uid="uid://cs6nhroco1ov4" path="res://Template/3D/Cardis/mypc.glb" id="14_qq5m4"]
+[ext_resource type="PackedScene" uid="uid://oe0ecrucibxj" path="res://Template/3D/Cardis/portalLoading.glb" id="15_vmsag"]
+[ext_resource type="PackedScene" uid="uid://do8h5ux2y2xla" path="res://Template/3D/Cardis/RadioX.glb" id="16_q7les"]
+[ext_resource type="PackedScene" uid="uid://be1h4ix5bhoe1" path="res://Template/3D/Cardis/settingsObject.glb" id="17_ap3nf"]
+[ext_resource type="PackedScene" uid="uid://cpt6omq45vvtl" path="res://Template/3D/fatih.glb" id="18_ddbaa"]
+[ext_resource type="PackedScene" uid="uid://8sskxi6kx4w3" path="res://Template/3D/rand.glb" id="19_6xpd8"]
+[ext_resource type="PackedScene" uid="uid://bpppkyjbq3x5b" path="res://Template/Scenes/TerminalWindow.tscn" id="22_27r58"]
+[ext_resource type="PackedScene" uid="uid://gucv3w7uib80" path="res://Template/Scenes/timerWindow.tscn" id="24_lckpk"]
+[ext_resource type="PackedScene" uid="uid://2fca85mlhnfy" path="res://Template/Scenes/AlarmWindow.tscn" id="25_c74c3"]
+[ext_resource type="PackedScene" uid="uid://b6v6gkhh4seyc" path="res://Template/Scenes/textEditorWindow.tscn" id="26_851v1"]
+[ext_resource type="PackedScene" uid="uid://cks2opyr4phuc" path="res://Template/Scenes/musicPlayerWindow.tscn" id="27_7w1ly"]
+[ext_resource type="PackedScene" uid="uid://yfqb62d76i5v" path="res://Template/Scenes/ziglotWalletWindow.tscn" id="28_hq56y"]
+[ext_resource type="Texture2D" uid="uid://bc1xuwn527w80" path="res://Template/Images/gameLogo.png" id="29_ddbaa"]
+[ext_resource type="PackedScene" uid="uid://bd68ccmu81v1w" path="res://Template/Scenes/wallpaperManager.tscn" id="29_mfvat"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60pt5"]
+texture = ExtResource("2_60pt5")
+
+[sub_resource type="Environment" id="Environment_jkjr4"]
+glow_enabled = true
+glow_intensity = 1.6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60pt5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnec2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkjr4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hq56y"]
+bg_color = Color(0.40784314, 0.08627451, 0.56078434, 0.43137255)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hq56y"]
+texture = ExtResource("29_ddbaa")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfvat"]
+bg_color = Color(0.29803923, 0.023529412, 0.43529412, 0.48235294)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fq1xu")
+metadata/_edit_lock_ = true
+
+[node name="2D_Screen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="bg" type="TextureRect" parent="2D_Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="screen" type="Panel" parent="2D_Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_60pt5")
+metadata/_edit_lock_ = true
+
+[node name="3D_Screen" type="Node3D" parent="."]
+visible = false
+script = ExtResource("4_fy443")
+
+[node name="Cardis" parent="3D_Screen" instance=ExtResource("4_jkjr4")]
+
+[node name="gnuchanCUBE" parent="3D_Screen/Cardis" instance=ExtResource("13_1ixem")]
+transform = Transform3D(0.14087237, 0, -0.13629095, 0, 0.19601083, 0, 0.13629095, 0, 0.14087237, -0.9381557, 1.041774, 8.166517)
+
+[node name="portal_door" parent="3D_Screen/Cardis" instance=ExtResource("5_6oc53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0793276, 0, 0)
+
+[node name="energyDC" parent="3D_Screen/Cardis" instance=ExtResource("11_ivhgg")]
+transform = Transform3D(1.8226373, 0, 0, 0, 1.8226373, 0, 0, 0, 1.8226373, 0.81152797, 1.4741924, 0.78326285)
+
+[node name="centerObject" parent="3D_Screen/Cardis" instance=ExtResource("5_u1jlj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4122728, 0)
+
+[node name="3DMap" parent="3D_Screen/Cardis" instance=ExtResource("5_aqmd5")]
+
+[node name="fusionCheck" type="Node3D" parent="3D_Screen/Cardis"]
+
+[node name="fusionCheck2" parent="3D_Screen/Cardis/fusionCheck" instance=ExtResource("13_qwtrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8277116, 1.0916173, 0.057862885)
+
+[node name="fusionCheck3" parent="3D_Screen/Cardis/fusionCheck" instance=ExtResource("13_qwtrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8277116, 1.0916173, -0.019287087)
+
+[node name="fusionCheck4" parent="3D_Screen/Cardis/fusionCheck" instance=ExtResource("13_qwtrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8277116, 1.0916173, -0.09805954)
+
+[node name="settings" type="Node3D" parent="3D_Screen/Cardis"]
+
+[node name="settingsObject" parent="3D_Screen/Cardis/settings" instance=ExtResource("17_ap3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4863476, 0.9868885, 1.4425446)
+
+[node name="settingsObject2" parent="3D_Screen/Cardis/settings" instance=ExtResource("17_ap3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4328073, 1.035816, 1.3204572)
+
+[node name="settingsObject3" parent="3D_Screen/Cardis/settings" instance=ExtResource("17_ap3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3917823, 1.0835949, 1.2076474)
+
+[node name="settingsObject4" parent="3D_Screen/Cardis/settings" instance=ExtResource("17_ap3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37175074, 1.1425545, 1.0888095)
+
+[node name="settingsObject5" parent="3D_Screen/Cardis/settings" instance=ExtResource("17_ap3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30405194, 1.1919011, 0.97594)
+
+[node name="settingsObject6" parent="3D_Screen/Cardis/settings" instance=ExtResource("17_ap3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25598726, 1.2374449, 0.8635311)
+
+[node name="settingsObject7" parent="3D_Screen/Cardis/settings" instance=ExtResource("17_ap3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20638326, 1.2962716, 0.7391723)
+
+[node name="gameboy" parent="3D_Screen/Cardis" instance=ExtResource("12_c7x4w")]
+transform = Transform3D(-0.0665092, 0, -3.7252903e-09, -1.1219926e-09, 0.06525917, 0.012834101, 0, 0.012834101, -0.06525917, 0.64180416, 1.1847733, 8.514803)
+
+[node name="mypc" parent="3D_Screen/Cardis" instance=ExtResource("14_qq5m4")]
+transform = Transform3D(-0.9999999, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, -0.9999999, 0.07563466, 1.0430309, 8.067887)
+
+[node name="portalLoading2" parent="3D_Screen/Cardis" instance=ExtResource("15_vmsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.838423, 0.1394667, 0.019164085)
+
+[node name="RadioX" parent="3D_Screen/Cardis" instance=ExtResource("16_q7les")]
+transform = Transform3D(-3.7252903e-09, 0, 0.09413198, 0, 0.09413197, 0, -0.09413198, 0, -3.7252903e-09, 1.2041345, 1.0909375, 8.156126)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="3D_Screen/Cardis"]
+occluder = ExtResource("11_jsfrx")
+
+[node name="CubeChanPc" parent="3D_Screen/Cardis" instance=ExtResource("5_n18ew")]
+transform = Transform3D(0.968843, 0, 0.2476754, 0, 1, 0, -0.2476754, 0, 0.968843, -3.259165, -4.7683716e-07, 0.12806642)
+
+[node name="fatih" parent="3D_Screen/Cardis" instance=ExtResource("18_ddbaa")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.3772635, 0, 0.019919872)
+
+[node name="rand" parent="3D_Screen/Cardis" instance=ExtResource("19_6xpd8")]
+transform = Transform3D(-0.71964276, 0, 0.6943444, 0, 1, 0, -0.6943444, 0, -0.71964276, 4.534515, -2.3841858e-07, 5.3913918)
+
+[node name="Camera3D" type="Camera3D" parent="3D_Screen"]
+transform = Transform3D(-0.9188256, 0, -0.39466375, 0, 1, 0, 0.39466375, 0, -0.9188256, -1.173748, 1.7425194, -3.9810586)
+fov = 90.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="3D_Screen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2029324, 0)
+light_energy = 1.29
+omni_range = 16.147196
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="3D_Screen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6631224, 1.4397472, -3.763579)
+light_energy = 1.29
+omni_range = 16.147196
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D_Screen"]
+environment = SubResource("Environment_jkjr4")
+
+[node name="time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1338.0
+offset_top = 5.0
+offset_right = 1560.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.54517436, 0.2589151, 0.77674526, 1)
+text = "dsdasdasdasd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lang" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1305.0
+offset_top = 5.0
+offset_right = 1325.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.54517436, 0.2589151, 0.77674526, 1)
+text = "en"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desktopInput" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 867.0
+offset_right = 1069.0
+offset_bottom = 900.0
+theme_override_colors/font_color = Color(0.6313726, 0.32941177, 1, 1)
+theme_override_colors/font_placeholder_color = Color(0.44650024, 0.0024442722, 0.7822823, 1)
+theme_override_fonts/font = ExtResource("2_k7vd6")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_60pt5")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_fnec2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jkjr4")
+placeholder_text = " Command Line"
+caret_blink = true
+
+[node name="TextEdit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1299.0
+offset_top = 104.0
+offset_right = 1561.0
+offset_bottom = 441.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hq56y")
+text = "
+-: Open/Close 3D Scene :  Alt + E
+-: Terminal :  Alt + Enter
+-: Pavucontrol : Alt+P
+-: Credit  : Alt+O
+-: Calculator : Alt+C
+-: Timer : Alt+T
+-: Alarm : Alt+A
+-: Text Editor  : Alt+Shift+T
+-: Music Player   :  Alt+M
+-: Close All Window  : Alt+R
+-: Ziglot Wallet  : Alt+V"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="TerminalWindow" parent="." instance=ExtResource("22_27r58")]
+position = Vector2i(104, 136)
+visible = false
+
+[node name="OptionsWindow" parent="." instance=ExtResource("4_v35cg")]
+position = Vector2i(85, 111)
+visible = false
+
+[node name="calculatorWindow" parent="." instance=ExtResource("2_2ut1a")]
+position = Vector2i(140, 36)
+visible = false
+
+[node name="textEditorWindow" parent="." instance=ExtResource("26_851v1")]
+position = Vector2i(85, 71)
+visible = false
+
+[node name="AlarmWindow" parent="." instance=ExtResource("25_c74c3")]
+position = Vector2i(155, 131)
+visible = false
+
+[node name="CreditWindow" parent="." instance=ExtResource("5_60pt5")]
+position = Vector2i(275, 81)
+visible = false
+
+[node name="timerWindow" parent="." instance=ExtResource("24_lckpk")]
+position = Vector2i(75, 326)
+visible = false
+
+[node name="musicPlayerWindow" parent="." instance=ExtResource("27_7w1ly")]
+position = Vector2i(110, 91)
+size = Vector2i(405, 730)
+visible = false
+
+[node name="wallpaperManager" parent="." instance=ExtResource("29_mfvat")]
+visible = false
+
+[node name="ziglotWalletWindow" parent="." instance=ExtResource("28_hq56y")]
+position = Vector2i(90, 461)
+visible = false
+
+[node name="startGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 67.0
+offset_right = 154.0
+offset_bottom = 183.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_hq56y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hq56y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq56y")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hq56y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hq56y")
+
+[node name="Label" type="Label" parent="startGame"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 89.0
+offset_right = 101.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_mfvat")
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="startGame" to="." method="_on_start_game_pressed"]

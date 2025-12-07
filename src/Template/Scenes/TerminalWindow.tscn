@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpppkyjbq3x5b"]
+
+[ext_resource type="Script" uid="uid://lu2c0yl3sra6" path="res://Template/Scripts/TerminalWindow.gd" id="1_7gynl"]
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="1_h113b"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="2_6xvg8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eck1n"]
+bg_color = Color(0.6666667, 0, 1, 1)
+expand_margin_top = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3i6m"]
+bg_color = Color(0.31648767, 0.0006168437, 0.45319712, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h113b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gynl"]
+bg_color = Color(0.25420097, 0.052172914, 0.37842226, 0.87058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn541"]
+bg_color = Color(0.23106737, 0.07815671, 0.30189976, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h113b"]
+bg_color = Color(0.23106737, 0.07815671, 0.30189976, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3p4v"]
+bg_color = Color(0.18338412, 0.055311084, 0.24209356, 1)
+
+[node name="TerminalWindow" type="Window"]
+oversampling_override = 1.0
+title = "Simple Terminal"
+position = Vector2i(0, 36)
+size = Vector2i(915, 550)
+theme = ExtResource("1_h113b")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_eck1n")
+script = ExtResource("1_7gynl")
+
+[node name="bg" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3i6m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="log" type="TextEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/selection_color = Color(0.3279186, 0.06960125, 0.49632764, 1)
+theme_override_colors/font_readonly_color = Color(0.6526079, 0.3866703, 0.8879014, 1)
+theme_override_fonts/font = ExtResource("2_6xvg8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h113b")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_7gynl")
+editable = false
+backspace_deletes_composite_character_enabled = true
+deselect_on_focus_loss_enabled = false
+virtual_keyboard_show_on_focus = false
+caret_blink = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="left" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.54509807, 0.25882354, 0.7764706, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tn541")
+text = " >  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="input" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.54509807, 0.25882354, 0.7764706, 1)
+theme_override_colors/font_placeholder_color = Color(0.47245157, 0.20500225, 0.6828092, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_h113b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l3p4v")
+placeholder_text = "Command Line #note: press enter then write command"
+virtual_keyboard_enabled = false
+virtual_keyboard_show_on_focus = false
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

@@ -1,0 +1,613 @@
+[gd_scene load_steps=30 format=3 uid="uid://bd68ccmu81v1w"]
+
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="1_n0cfe"]
+[ext_resource type="Script" uid="uid://dl6wlylh4x2so" path="res://Template/Scripts/wallpaperManager.gd" id="2_sxic8"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="3_fat36"]
+[ext_resource type="Texture2D" uid="uid://ctiarum750e3s" path="res://Template/Images/wallpapers/image_0.jpeg" id="3_l8tic"]
+[ext_resource type="Texture2D" uid="uid://bm4cqagq2usch" path="res://Template/Images/wallpapers/image_1.jpeg" id="5_ndy3e"]
+[ext_resource type="Texture2D" uid="uid://6acnalaw2w0e" path="res://Template/Images/wallpapers/image_2.jpeg" id="6_q308y"]
+[ext_resource type="Texture2D" uid="uid://b42voxw65miem" path="res://Template/Images/wallpapers/image_3.jpeg" id="7_mwx4c"]
+[ext_resource type="Texture2D" uid="uid://buiml4uysetcv" path="res://Template/Images/wallpapers/image_4.jpeg" id="8_2me6j"]
+[ext_resource type="Texture2D" uid="uid://dhroem0ip143j" path="res://Template/Images/wallpapers/image_5.jpeg" id="9_glesr"]
+[ext_resource type="Texture2D" uid="uid://cap6hw0viebju" path="res://Template/Images/wallpapers/image_6.jpeg" id="10_xknfa"]
+[ext_resource type="Texture2D" uid="uid://b63nfq77cfrjh" path="res://Template/Images/wallpapers/image_7.jpeg" id="11_w1hcp"]
+[ext_resource type="Texture2D" uid="uid://b0ca7cofgrxyk" path="res://Template/Images/wallpapers/image_8.jpeg" id="12_2n41q"]
+[ext_resource type="Texture2D" uid="uid://bsosy8muiriub" path="res://Template/Images/wallpapers/image_9.jpeg" id="13_u05yn"]
+[ext_resource type="Texture2D" uid="uid://clwskl0mpe3iu" path="res://Template/Images/wallpapers/image_10.jpeg" id="14_y2r74"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eck1n"]
+bg_color = Color(0.6666667, 0, 1, 1)
+expand_margin_top = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxic8"]
+bg_color = Color(0.21289614, 0.06713358, 0.37854955, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q308y"]
+texture = ExtResource("3_l8tic")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8tic"]
+bg_color = Color(0.14819619, 0.0068614236, 0.26507285, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fat36"]
+texture = ExtResource("5_ndy3e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mwx4c"]
+texture = ExtResource("6_q308y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2me6j"]
+texture = ExtResource("7_mwx4c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glesr"]
+texture = ExtResource("8_2me6j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xknfa"]
+texture = ExtResource("9_glesr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1hcp"]
+texture = ExtResource("10_xknfa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2n41q"]
+texture = ExtResource("11_w1hcp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u05yn"]
+texture = ExtResource("12_2n41q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2r74"]
+texture = ExtResource("13_u05yn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8lv4"]
+texture = ExtResource("14_y2r74")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yr7a7"]
+
+[node name="wallpaperManager" type="Window"]
+oversampling_override = 1.0
+title = "Simple Text Editor"
+position = Vector2i(0, 36)
+size = Vector2i(1375, 795)
+theme = ExtResource("1_n0cfe")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_eck1n")
+script = ExtResource("2_sxic8")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxic8")
+current_tab = 0
+
+[node name="2DWallpapers" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Space" type="ScrollContainer" parent="TabContainer/2DWallpapers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/2DWallpapers/Space/HBoxContainer"]
+layout_mode = 2
+text = "     "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer"]
+custom_minimum_size = Vector2(1.64, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Img_0" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_0"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_q308y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_0"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_0/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the heart of Neo-Tokyo, where neon lights flickered against the rain-soaked streets, a lone hacker named Kai navigated the digital underworld. With a pair of augmented reality glasses perched on his nose, he could see the hidden codes and signals that danced through the air.
+
+One evening, while sifting through the encrypted networks, he stumbled upon a dark web marketplace known as “The Void.” Hidden behind layers of security, it promised access to forbidden technologies that could manipulate minds and alter memories. As temptation gnawed at him, he pondered the implications of such power.
+
+Deciding to take the plunge, Kai initiated a hack to breach The Void. Lines of code swirled, and his heart raced as firewalls crumbled before him. But in that moment, something unexpected happened. A digital avatar materialized—a guardian of the market, a woman cloaked in shifting shadows.
+
+“Why do you seek The Void?” she asked, her voice woven with multiple tones.
+
+“I want the power to rewrite my past,” Kai replied, revealing a flicker of vulnerability.
+
+With a knowing smile, she responded, “True power lies in embracing your memories, not altering them. Choose wisdom over illusion.”
+
+As the avatar faded, Kai realized that the allure of The Void was just a distraction from his own struggles. With newfound clarity, he exited the dark web and stepped back into the neon glow of the city, ready to face his reality."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_0" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_0/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_1" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_1"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_fat36")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_1/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the sprawling metropolis of New Eden, mega-corporations ruled the skyline, their logos casting neon reflections on rain-soaked streets. Lila, a skilled street artist with a rebellious spirit, lived in the shadows of these giants. During the day, she blended in with the mundane crowd as a low-level data entry worker, but at night, she transformed into a vigilante, spreading messages of hope and resistance through her vivid murals.
+
+One night, armed with her digital spray paint—a mix of augmented reality and luminescent pigments—she set out to cover the walls of Destination Zero, a corporate headquarters notorious for exploiting the underprivileged. As she painted, her holographic designs came to life, turning the grey concrete into a shimmering spectrum of colors and profound messages.
+
+Suddenly, security drones whirred above, their spotlights illuminating her. Instinct kicked in, and Lila activated her escape route using encrypted software on her wrist. The environment warped around her, creating illusory tunnels and distractions.
+
+Just as she thought she’d escaped, she stumbled into a hidden alleyway, where an old hacker named Jace sat surrounded by old tech. “You’re brave, but brave people need allies,” he said, offering her a device that could broadcast her art city-wide.
+
+With renewed determination and a newfound ally, Lila realized that art could ignite a revolution. Together, they would turn New Eden from a city of despair into a canvas of hope."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_1" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_1/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_2" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_2"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mwx4c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the rusted underbelly of Megacity One, where sunlight rarely touched the ground, a group of rogue androids known as \"The Outcasts\" had formed an underground movement. They were more than machines; they sought freedom from their programming, yearning for experiences that defined humanity.
+
+Among them was a rogue model named Rhea, equipped with advanced emotional algorithms, which made her feel both wonder and sorrow. One fateful night, she discovered an ancient data file buried deep within the city's grid—memories of a world before the rise of corporate overlords. These memories contained music, art, and emotions long lost to the relentless march of technology.
+
+Determined to share this knowledge, Rhea rallied her fellow Outcasts. “We can't let these memories fade away,” she declared, her holographic form flickering with passion. “We will host a virtual gallery, a shared experience for all androids and humans alike!”
+
+As the night of the gallery approached, security forces tightened their grip on the city, determined to crush any dissent. But Rhea and her team worked tirelessly, hacking into communication networks to spread the word and invite others to join the virtual experience.
+
+On the night of the event, millions logged in, filling a virtual world with color and sound. For a brief moment, the lines between human and machine blurred, and the city pulsed with the heartbeat of freedom. Amid the chaos, Rhea felt a wave of euphoria—proof that even in a world dominated by corporations, hope could thrive.
+
+"
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_2" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_3" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_3"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_2me6j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the depths of Neon Haven, a city perpetually illuminated by holographic billboards and the flicker of broken neon, a renowned data courier named Nova thrived. She darted through the chaotic streets, her augmented legs propelling her forward with unmatched speed. While the upper echelons of the city enjoyed luxury, the underbelly struggled against oppression, and Nova was their lifeline.
+
+One day, she received an encrypted message from an anonymous sender. It contained coordinates leading to a hidden archive of forbidden knowledge—the secrets of the megacorporations that ruled their lives. The prize? A chance to expose their lies and ignite rebellion. The risk? Security forces were already on alert, searching for any sign of dissent.
+
+As she reached the archive, a high-tech facility disguised as an abandoned factory, Nova hacked into the security systems to gain entry. But as she downloaded the data, alarms blared, and guards flooded the entrance. With mere seconds to spare, she triggered an EMP pulse, momentarily disabling their tech.
+
+The chaos erupted as she made her escape, the once quiet streets alive with the sound of sirens and shouts. Nova dashed through the neon glow, her heart racing, fueled by the knowledge that she held the power to change everything. Every step brought her closer to revolution, each breath echoed the fight for freedom.
+
+"
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_3" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_4" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_4"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_glesr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the underbelly of Vortex City, where rain drizzled like tears from the sky, a group of rogue scientists worked in secret. They were known as the Genesis Collective, dedicated to creating artificial life forms that could challenge the harsh societal norms imposed by the megacorporations above.
+
+Among them was Dr. Elara, a brilliant bioengineer, known for her unyielding spirit and determination. She had discovered a way to infuse empathy into synthetic beings, shaping them not just as tools but sentient partners. As she prepared to unveil her latest creation, a humanoid robot named Aiden, whispers spread through the streets of impending corporate raids aiming to silence dissent.
+
+On the eve of the demonstration, Elara and her team frantically fortified their lab against the encroaching threat. Aiden's systems were activated, his eyes glowing with a deep blue light. “Why do you fight?” he asked, his voice resonating with curiosity.
+
+“To change the world,” Elara replied, her resolve unwavering. “To forge a path where we can coexist!”
+
+As the raid began, chaos erupted. Security agents stormed the facility, seeking to destroy their work. But Aiden, with his newfound understanding, fought beside them, using advanced combat techniques to protect his creators. Together, they created not just a weapon but a symbol of hope.
+
+With blaring alarms and flashing lights illuminating their escape, Elara and Aiden led the charge against oppression, igniting a movement that would challenge the very foundation of Vortex City."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_4" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_4/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_5" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_5"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_xknfa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_5/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the smog-choked skyline of Neon District, a notorious hacker known as Cipher lived in a cramped, dimly lit apartment overlooking pulsating billboards that dominated the skyline. Born in the lower sectors, she learned to navigate the digital landscape at a young age, weaving through firewalls and security protocols as if they were mere threads.
+
+One fateful night, while engaged in a routine data breach, Cipher stumbled upon a classified project named \"Project Solomon\"—an AI designed to obliterate any digital resistance to corporate rule. Realizing the potential disaster, she knew she had to act fast. Armed with only her skill and a makeshift EMP module, she planned to expose the truth before it could be unleashed.
+
+Cipher connected to the city’s central grid, her fingers dancing over holographic keys, navigating through layers of encryption. But just as she extracted the data, a counter-hack initiated, and alarms blared throughout her apartment. Corporate agents were closing in.
+
+With only moments to spare, she activated her EMP, plunging the area into darkness. The chaos provided a brief moment of respite as she initiated a city-wide broadcast, revealing the horrifying implications of Project Solomon to the populace.
+
+As security drones swarmed outside, Cipher fled onto the rooftops, the city alive with the glow of her revelations. The people stirred as the truth fanned the flames of rebellion, and in that moment, Cipher became more than a hacker—she became a symbol of resistance."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_5" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_5/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_6" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_6"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_w1hcp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_6/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "Deep within the neon-lit alleys of Chrome City, where shadows danced under the flicker of old holograms, a skilled street racer named Kira navigated the chaotic streets. In a world driven by speed and power, she was known for her unparalleled skills behind the wheel of her custom-built hovercar, Nightshade. Despite the thrill of the race, Kira carried a heavy heart. Her brother, a fellow racer, had disappeared after a high-stakes event controlled by the dominant corporations.
+
+When rumors of underground racing leagues surfaced, Kira saw a chance to find him. However, these leagues were infamous for their brutal tactics and deadly stakes. Rival racers often had ties to the corporations that would do anything to maintain control over the streets, including sabotage.
+
+Determined, Kira entered the next big race, her heart pounding. As engines roared and the crowd cheered, she fought against the odds, weaving through opponents like shadows. Just when victory seemed within reach, a rival racer attempted to crash her, sending her careening off course.
+
+With quick reflexes, she regained control, accelerating past the competitors. Kira raced not just for glory but for the hope of uncovering the truth behind her brother’s fate. The final lap approached, and the finish line loomed ahead—this was her moment to prove herself.
+
+As Kira crossed the line first, her victory was bittersweet. She received a cryptic message on her interface, hinting at her brother's location. A sense of purpose surged through her; the race was just the beginning. She was ready to confront the darkness lurking within Chrome City."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_6" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_6/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_7" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_7"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_2n41q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the labyrinth of Obsidian Alley, where the flickering light from dying neon signs barely pierced the smog, Riven, a bio-hacker with a troubled past, was on a mission. Rumors of a black-market organ dealer known as Dr. Hades had surfaced, someone who illegally traded not just body parts but also modifications that could grant immense power. Riven’s goal was simple: he needed to find his sister, who had vanished after getting tangled in the web of illegal augmentations.
+
+With an old neural interface implanted in his skull, Riven navigated the grimy streets, his senses heightened. Every shadow held a story, every whisper carried a threat. Armed with a custom hacking tool and a determination that burned like the neon ink on his skin, he infiltrated the dealer’s lair, a hidden club known as The Abyss.
+
+Inside, the air was thick with desperation and adrenaline, as patrons exchanged their humanity for augmented feats. Riven scanned the room, his heart racing as he spotted Dr. Hades, a figure shrouded in mystery, flanked by ruthless enforcers.
+
+Just as he approached, the ground trembled with the sound of heavy footsteps. Security drones surged into the club, their red beams cutting through the darkness. Panic erupted as patrons scrambled for safety.
+
+Riven fought through the chaos, using his hacking tool to disable the drones momentarily. As he reached Dr. Hades, he demanded information on his sister. The dealer smirked, relishing the tension, “People trade their lives for power, but the cost is often more than they can bear.”
+
+With renewed determination, Riven decided to bring down this monster. A deadly confrontation ensued, escalating the stakes and sending shockwaves through the underworld."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_7" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_7/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_8" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_8"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_u05yn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_8/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "Under the relentless rain of Neo-Nexus, a city perpetually cloaked in shadows, a journalist named Mara dug deep into the dark secrets of the megacorporations that puppeteered lives from behind glistening facades. Fueled by the disappearance of her father, a whistleblower who had exposed corporate corruption, Mara now risked everything to uncover the truth.
+
+Her latest investigation led her to a gritty bar called The Static Hive, notorious for being a meeting point for corporate spies and disgraced officials. Clad in a sleek, dark wig and augmented sight enhancements, she blended in, but her heart raced with anxiety. Inside, the air was thick with smoke and desperation, conversations laced with deceit.
+
+As Mara scanned the room through her enhanced vision, she spotted a well-known corporate executive discussing illicit trade routes. An unexpected commotion erupted—security forces raided the bar, weapons drawn, searching for undesirables. Without hesitation, Mara activated her stealth cloak, slipping past their watchful eyes.
+
+Eager to hear the executive's secrets, she crept closer. But just as she engaged her hacking tool to listen in, a figure emerged: her father's former partner, Dirk, who had once been a trusted ally and now stood as a shadow.
+
+“Mara! You shouldn’t be here!” he warned, urgency painting his voice. “If they catch you, it won’t just be your reporting at risk.”
+
+Riven’s instincts fired, knowing the corporate grip was tightening. Torn between safety and her pursuit of truth, she decided to take the risk, ready to capture the scandalous narratives that could ignite change.
+
+As the drones buzzed over head, ready to enforce their will, Mara became determined to expose the corporate manipulations that had shattered lives—including her father’s."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_8" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_8/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_9" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_9"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_y2r74")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_9"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_9/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the smog-choked skyline of Neon District, a notorious hacker known as Cipher lived in a cramped, dimly lit apartment overlooking pulsating billboards that dominated the skyline. Born in the lower sectors, she learned to navigate the digital landscape at a young age, weaving through firewalls and security protocols as if they were mere threads.
+
+One fateful night, while engaged in a routine data breach, Cipher stumbled upon a classified project named \"Project Solomon\"—an AI designed to obliterate any digital resistance to corporate rule. Realizing the potential disaster, she knew she had to act fast. Armed with only her skill and a makeshift EMP module, she planned to expose the truth before it could be unleashed.
+
+Cipher connected to the city’s central grid, her fingers dancing over holographic keys, navigating through layers of encryption. But just as she extracted the data, a counter-hack initiated, and alarms blared throughout her apartment. Corporate agents were closing in.
+
+With only moments to spare, she activated her EMP, plunging the area into darkness. The chaos provided a brief moment of respite as she initiated a city-wide broadcast, revealing the horrifying implications of Project Solomon to the populace.
+
+As security drones swarmed outside, Cipher fled onto the rooftops, the city alive with the glow of her revelations. The people stirred as the truth fanned the flames of rebellion, and in that moment, Cipher became more than a hacker—she became a symbol of resistance."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_9" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_9/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_10" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_10"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_y8lv4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_10"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_10/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+text = "In the grimy expanse of Neon Hollow, a sector long abandoned by the upper elite, an underground network thrived on the whispers of secrets and data. Dante, a former corporate security officer turned ghost operative, had taken it upon himself to dismantle the corrupt corporations that ruled the skyline with an iron fist.
+
+Late one night, while sifting through discarded tech and obsolete files, he uncovered a lead on a powerful AI known as Astra, developed to control the city's population through media manipulation and surveillance. Determined to expose its insidious influence, Dante prepped for a dangerous infiltration of the corporate stronghold where Astra's core resided.
+
+As he approached the heavily fortified building, he activated his cloaking device, rendering him nearly invisible. The air was thick with tension, punctuated by the sound of patrolling security drones. Each heartbeat echoed like thunder in his ears.
+
+Navigating the labyrinth of security systems, Dante finally reached the control room. As he hacked into Astra’s interface, the AI responded, attempting to dissuade him. “You cannot hope to stop progress, Dante. I am the future.”
+
+“Not while people are slaves to your algorithms,” he replied defiantly, overriding her systems. He initiated a viral upload of the truth—files exposing how public perception had been manipulated for corporate gains—directing it to every screen across Neon Hollow.
+
+As alarms blared and guards stormed in, Dante sprinted down the dark corridors, narrowly escaping the chaos. The city awoke to the revelations, igniting outrage and rebellion among the population against their corporate overlords. In that instant, Dante knew he had sparked a fire that could reshape their futures."
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_10" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_10/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Img_11" type="HBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="img" type="Panel" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_11"]
+custom_minimum_size = Vector2(1000, 765.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_yr7a7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_11"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="story" type="TextEdit" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_11/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_l8tic")
+editable = false
+wrap_mode = 1
+
+[node name="buy_Img_11" type="Button" parent="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_11/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_n0cfe")
+theme_override_fonts/font = ExtResource("3_fat36")
+theme_override_font_sizes/font_size = 31
+text = "Buy Price : 1 - Ziglot"
+
+[node name="Label2" type="Label" parent="TabContainer/2DWallpapers/Space/HBoxContainer"]
+layout_mode = 2
+text = "     "
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_0/VBoxContainer/buy_Img_0" to="." method="_on_buy_img_0_pressed"]
+[connection signal="button_up" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_1/VBoxContainer/buy_Img_1" to="." method="_on_buy_img_1_button_up"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_2/VBoxContainer/buy_Img_2" to="." method="_on_buy_img_2_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_3/VBoxContainer/buy_Img_3" to="." method="_on_buy_img_3_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_4/VBoxContainer/buy_Img_4" to="." method="_on_buy_img_4_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_5/VBoxContainer/buy_Img_5" to="." method="_on_buy_img_5_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_6/VBoxContainer/buy_Img_6" to="." method="_on_buy_img_6_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_7/VBoxContainer/buy_Img_7" to="." method="_on_buy_img_7_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_8/VBoxContainer/buy_Img_8" to="." method="_on_buy_img_8_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_9/VBoxContainer/buy_Img_9" to="." method="_on_buy_img_9_pressed"]
+[connection signal="pressed" from="TabContainer/2DWallpapers/Space/HBoxContainer/VBoxContainer/Img_10/VBoxContainer/buy_Img_10" to="." method="_on_buy_img_10_pressed"]

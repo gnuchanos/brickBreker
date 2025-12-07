@@ -1,0 +1,90 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bc1qbaiw5j5pt"
+path="res://.godot/imported/Cardis.glb-f7dc163c21c06229fec7dbd887bd3219.scn"
+
+[deps]
+
+source_file="res://Template/3D/Cardis/Cardis.glb"
+dest_files=["res://.godot/imported/Cardis.glb-f7dc163c21c06229fec7dbd887bd3219.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"center": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/Transparent.tres",
+"use_external/path": "uid://coa5krvwcdkc1"
+},
+"gc": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/Gc.tres",
+"use_external/path": "uid://xllty13kwe7e"
+},
+"glass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/Transparent.tres",
+"use_external/path": "uid://coa5krvwcdkc1"
+},
+"light": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/Light.tres",
+"use_external/path": "uid://c380r5jnb55j4"
+},
+"screen": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/MapScreen.tres",
+"use_external/path": "uid://dtk8qixhuj2t0"
+},
+"settingScreen": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/Screen.tres",
+"use_external/path": "uid://d12rymv5tkeyv"
+},
+"suporter0": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/support0.tres",
+"use_external/path": "uid://cgk2vhta1cvi5"
+},
+"supporter1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/support1.tres",
+"use_external/path": "uid://h6mbvr22wn3l"
+},
+"xLight": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Template/3D/Cardis/xLight.tres",
+"use_external/path": "uid://cwqa5nwekabj3"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

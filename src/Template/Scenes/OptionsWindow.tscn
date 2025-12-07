@@ -1,0 +1,157 @@
+[gd_scene load_steps=9 format=3 uid="uid://bggumlgvxtx3m"]
+
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="1_53u0w"]
+[ext_resource type="Script" uid="uid://c6npecajgo3xe" path="res://Template/Scripts/OptionsWindow.gd" id="1_cirn4"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="1_p3i6m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3i6m"]
+bg_color = Color(0.31648767, 0.0006168437, 0.45319712, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_eh8cq"]
+color = Color(0.48954105, 0.1158269, 0.74206233, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cirn4"]
+color = Color(0.3764706, 0.1254902, 0.5019608, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_53u0w"]
+color = Color(0.56078434, 0.1882353, 0.7490196, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_je3va"]
+color = Color(0.7490196, 0.2509804, 1, 1)
+thickness = 10
+
+[node name="OptionsWindow" type="Window"]
+oversampling_override = 1.0
+title = "Simple Pavucontrol (Parody)"
+position = Vector2i(0, 36)
+size = Vector2i(945, 200)
+theme = ExtResource("1_53u0w")
+script = ExtResource("1_cirn4")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3i6m")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_eh8cq")
+
+[node name="MusicVolume" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MusicVolumeLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91764706, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("1_p3i6m")
+theme_override_font_sizes/font_size = 31
+text = " Music Volume  : "
+
+[node name="MusicVolumeHSlider" type="HSlider" parent="Panel/ScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_cirn4")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_53u0w")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_je3va")
+max_value = 1.5
+step = 0.001
+value = 0.5
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+text = "    "
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_eh8cq")
+
+[node name="EffectVolume" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MusicVolumeLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer/EffectVolume"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91764706, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("1_p3i6m")
+theme_override_font_sizes/font_size = 31
+text = " Effect Volume  : "
+
+[node name="EffectVolumeHSlider" type="HSlider" parent="Panel/ScrollContainer/VBoxContainer/EffectVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_cirn4")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_53u0w")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_je3va")
+max_value = 1.5
+step = 0.001
+value = 0.5
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/EffectVolume"]
+layout_mode = 2
+text = "    "
+
+[node name="HSeparator3" type="HSeparator" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_eh8cq")
+
+[node name="VoiceVolume" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VoiceVolumeLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer/VoiceVolume"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91764706, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("1_p3i6m")
+theme_override_font_sizes/font_size = 31
+text = " Voice Volume  : "
+
+[node name="VoiceVolumeHSlider" type="HSlider" parent="Panel/ScrollContainer/VBoxContainer/VoiceVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_cirn4")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_53u0w")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_je3va")
+max_value = 1.5
+step = 0.001
+value = 0.5
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/VoiceVolume"]
+layout_mode = 2
+text = "    "
+
+[node name="HSeparator4" type="HSeparator" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_eh8cq")
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="value_changed" from="Panel/ScrollContainer/VBoxContainer/MusicVolume/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_value_changed"]
+[connection signal="value_changed" from="Panel/ScrollContainer/VBoxContainer/EffectVolume/EffectVolumeHSlider" to="." method="_on_effect_volume_h_slider_value_changed"]
+[connection signal="value_changed" from="Panel/ScrollContainer/VBoxContainer/VoiceVolume/VoiceVolumeHSlider" to="." method="_on_voice_volume_h_slider_value_changed"]

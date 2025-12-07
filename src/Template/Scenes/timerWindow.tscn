@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://gucv3w7uib80"]
+
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="1_skv10"]
+[ext_resource type="Script" uid="uid://pvb4i5t87i2r" path="res://Template/Scripts/timerWindow.gd" id="2_4knxk"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="3_4knxk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eck1n"]
+bg_color = Color(0.6666667, 0, 1, 1)
+expand_margin_top = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwxqh"]
+bg_color = Color(0.31648767, 0.0006168437, 0.45319712, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46l6p"]
+bg_color = Color(0.20148522, 0.00025343246, 0.29588977, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4knxk"]
+bg_color = Color(0.18063173, 0.03166942, 0.279242, 1)
+
+[node name="timerWindow" type="Window"]
+oversampling_override = 1.0
+title = "Simple Timer"
+position = Vector2i(0, 36)
+size = Vector2i(410, 130)
+theme = ExtResource("1_skv10")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_eck1n")
+script = ExtResource("2_4knxk")
+
+[node name="bg" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwxqh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="time" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4knxk")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_46l6p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sep" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4knxk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_skv10")
+theme_override_fonts/font = ExtResource("3_4knxk")
+theme_override_font_sizes/font_size = 22
+text = "Start Timer"
+
+[node name="stop" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_skv10")
+theme_override_fonts/font = ExtResource("3_4knxk")
+theme_override_font_sizes/font_size = 22
+text = "Stop Timer"
+
+[node name="clear" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_skv10")
+theme_override_fonts/font = ExtResource("3_4knxk")
+theme_override_font_sizes/font_size = 22
+text = "Clear Timer"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/clear" to="." method="_on_clear_pressed"]

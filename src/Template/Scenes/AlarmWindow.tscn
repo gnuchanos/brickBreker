@@ -1,0 +1,405 @@
+[gd_scene load_steps=10 format=3 uid="uid://2fca85mlhnfy"]
+
+[ext_resource type="Theme" uid="uid://ccjndvnjdmjjc" path="res://Template/DefaultThemes.tres" id="1_ol35f"]
+[ext_resource type="Script" uid="uid://bwqdjfeboh5he" path="res://Template/Scripts/AlarmWindow.gd" id="2_ol35f"]
+[ext_resource type="FontFile" uid="uid://1mn4anwlt8yb" path="res://Template/Font/FreeSans.ttf" id="3_fdu21"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eck1n"]
+bg_color = Color(0.6666667, 0, 1, 1)
+expand_margin_top = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwxqh"]
+bg_color = Color(0.31648767, 0.0006168437, 0.45319712, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46l6p"]
+bg_color = Color(0.20148522, 0.00025343246, 0.29588977, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4knxk"]
+bg_color = Color(0.18063173, 0.03166942, 0.279242, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol35f"]
+bg_color = Color(0.23730049, 0.05178731, 0.35899547, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42082"]
+bg_color = Color(0.123148836, 0.015523924, 0.19441786, 1)
+
+[node name="AlarmWindow" type="Window"]
+oversampling_override = 1.0
+title = "Simple Alarm v0.31"
+position = Vector2i(0, 36)
+size = Vector2i(500, 750)
+theme = ExtResource("1_ol35f")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_eck1n")
+script = ExtResource("2_ol35f")
+
+[node name="bg" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwxqh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="time" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_46l6p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sep" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4knxk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 22
+text = "Start Alarm"
+
+[node name="stop" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 22
+text = "Stop Alarm"
+
+[node name="clear" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 22
+text = "Clear Alarm"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="hour" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Hour"
+
+[node name="minute" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Minute"
+
+[node name="second" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Second default: 0"
+
+[node name="text" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ol35f")
+text = "Alarm Sound List"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_42082")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CyberWare1" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 1"
+
+[node name="CyberWare1" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare1"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 2"
+
+[node name="CyberWare2" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare2"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 3"
+
+[node name="CyberWare3" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare3"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 4"
+
+[node name="CyberWare4" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare4"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare5" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 5"
+
+[node name="CyberWare5" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare5"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare6" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 6"
+
+[node name="CyberWare6" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare6"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare7" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 7"
+
+[node name="CyberWare7" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare7"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare8" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 8"
+
+[node name="CyberWare8" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare8"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare9" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare9"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 9"
+
+[node name="CyberWare9" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare9"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare10" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare10"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 10"
+
+[node name="CyberWare10" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare10"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare11" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare11"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 11"
+
+[node name="CyberWare11" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare11"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare12" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare12"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 12"
+
+[node name="CyberWare12" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare12"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="CyberWare13" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare13"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 30
+text = "CyberWare 13"
+
+[node name="CyberWare13" type="Button" parent="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare13"]
+layout_mode = 2
+theme = ExtResource("1_ol35f")
+theme_override_fonts/font = ExtResource("3_fdu21")
+theme_override_font_sizes/font_size = 20
+text = " Set Alarm Sound "
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare1/CyberWare1" to="." method="_on_cyber_ware_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare2/CyberWare2" to="." method="_on_cyber_ware_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare3/CyberWare3" to="." method="_on_cyber_ware_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare4/CyberWare4" to="." method="_on_cyber_ware_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare5/CyberWare5" to="." method="_on_cyber_ware_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare6/CyberWare6" to="." method="_on_cyber_ware_6_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare7/CyberWare7" to="." method="_on_cyber_ware_7_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare8/CyberWare8" to="." method="_on_cyber_ware_8_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare9/CyberWare9" to="." method="_on_cyber_ware_9_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare10/CyberWare10" to="." method="_on_cyber_ware_10_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare11/CyberWare11" to="." method="_on_cyber_ware_11_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare12/CyberWare12" to="." method="_on_cyber_ware_12_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Panel/ScrollContainer/VBoxContainer/CyberWare13/CyberWare13" to="." method="_on_cyber_ware_13_pressed"]
